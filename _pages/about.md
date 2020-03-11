@@ -10,7 +10,7 @@ profile:
   address: >
     <p>Barus & Holley 744,</p>
     <p>184 Hope St.,</p>
-    <p>Providence, RI 02906</p>
+    <p>Providence, RI 02912</p>
 
 news: true
 social: true
