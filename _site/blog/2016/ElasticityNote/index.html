@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Weilin Deng | Miscellaneous notes on linear elasticity</title>
+  <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+  
+
+  <link rel="shortcut icon" href="http://localhost:4000/weilindeng.com/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="http://localhost:4000/weilindeng.com/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/weilindeng.com/blog/2016/ElasticityNote/">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <span class="site-title">
+        
+        <strong>Weilin</strong> Deng
+    </span>
+    
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+      <div class="trigger">
+        <!-- About -->
+        <a class="page-link" href="http://localhost:4000/weilindeng.com/">about</a>
+
+        <!-- Blog -->
+        <a class="page-link" href="http://localhost:4000/weilindeng.com/blog/">blog</a>
+
+        <!-- Pages -->
+        
+          
+        
+          
+        
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/weilindeng.com/projects/">projects</a>
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/weilindeng.com/publications/">publications</a>
+          
+        
+          
+            <a class="page-link" href="http://localhost:4000/weilindeng.com/teaching/">teaching</a>
+          
+        
+          
+        
+          
+        
+
+        <!-- CV link -->
+        <!-- <a class="page-link" href="http://localhost:4000/weilindeng.com/assets/pdf/CV.pdf">vitae</a> -->
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Miscellaneous notes on linear elasticity</h1>
+    <p class="post-meta">October 20, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="tensor">Tensor</h3>
+<p>Some good introductions to tensors can be found in</p>
+<ul>
+  <li>Javier Bonet and Richard D. Wood, Nonlinear Continuum Mechanics for Finite Element Analysis, Chapter 2</li>
+  <li>Piaras Kelly, <a href="http://homepages.engineering.auckland.ac.nz/~pkel015/SolidMechanicsBooks/Part_III/index.html">Mechanics Lecture Notes Part III: Foundations of Continuum Mechanics</a></li>
+</ul>
+
+<h3 id="principle-of-virtual-work">Principle of virtual work</h3>
+<p>For a static, linear elastic boundary value problem, the governing equation reads</p>
+
+<script type="math/tex; mode=display">\begin{align}
+  \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
+  \label{eq:equilbrium}
+\end{align}</script>
+
+<p>with the boundary conditions</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \boldsymbol{u} &= \boldsymbol{u}^*, \quad \text{on} \quad \Gamma_u, \\
+  \boldsymbol{\sigma} \cdot \boldsymbol{n} &= \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. 
+  \label{eq:BC}
+\end{align} %]]></script>
+
+<p>Consider a virtual displacement filed <script type="math/tex">\delta\boldsymbol{u}</script> which satisfies <script type="math/tex">\delta\boldsymbol{u} = \boldsymbol{o}</script> on <script type="math/tex">\Gamma_u</script>. Multiply <script type="math/tex">\delta\boldsymbol{u}</script> on both side of \eqref{eq:equilbrium} and integrate over <script type="math/tex">\Omega</script>, we obtain</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  & \int_{\Omega} (\nabla \cdot \boldsymbol{\sigma}) \cdot \delta\boldsymbol{u} \, dV + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u} \, dV \\
+  &= \int_{\Omega} \nabla \cdot (\boldsymbol{\sigma} \cdot \delta\boldsymbol{u}) \, dV - \int_{\Omega} \boldsymbol{\sigma}:\nabla \delta \boldsymbol{u} \, dV + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u} \, dV \\
+  &= \int_{\Gamma} \boldsymbol{n} \cdot (\boldsymbol{\sigma} \cdot \delta\boldsymbol{u}) \, dS - \int_{\Omega} \boldsymbol{\sigma}:\nabla\delta\boldsymbol{u} \, dV + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u} \, dV \\
+  &= \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS - \int_{\Omega} \boldsymbol{\sigma}:\nabla\delta\boldsymbol{u} \, dV + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u} \, dV \\
+  &= 0,
+  \label{eq:virtualwork}
+\end{align} %]]></script>
+
+<p>which can be rewrite as</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \int_{\Omega} \boldsymbol{\sigma}:\nabla\delta\boldsymbol{u} \, dV &= \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u}\, dV,
+  \label{eq:virtualwork1}
+\end{align} %]]></script>
+
+<p>or</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \int_{\Omega} \boldsymbol{\sigma}:\delta\boldsymbol{\epsilon} \, dV &= \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b} \cdot \delta\boldsymbol{u}\, dV.
+  \label{eq:virtualwork2}
+\end{align} %]]></script>
+
+<p>In arriving \eqref{eq:virtualwork} we invoked the Green’s theorem, and in arriving \eqref{eq:virtualwork2} from \eqref{eq:virtualwork1}, we used the property that $\boldsymbol{\sigma}$ is symmetric and $\boldsymbol{\sigma}:\nabla\delta\boldsymbol{u}$ = $\boldsymbol{\sigma}:(\text{sym}(\nabla\delta\boldsymbol{u}) + \text{skewsym}(\nabla\delta\boldsymbol{u}))$ = $\boldsymbol{\sigma}:\text{sym}(\nabla\delta\boldsymbol{u})$ = $\boldsymbol{\sigma}:\delta\boldsymbol{\epsilon}$.</p>
+
+<p>The \eqref{eq:virtualwork2} has clear physical meaning, that is, the internal work stored in the solid (LHS) is equal to the external work done by the surface traction and body force (RHS).</p>
+
+<h3 id="constitutive-relation-for-istropic-solid">Constitutive relation for istropic solid</h3>
+<p>The constitutive relation, or the stress–strain ($\boldsymbol{\sigma}–\boldsymbol{\epsilon}$) relation, for the istropic solid is</p>
+
+<script type="math/tex; mode=display">\begin{align}
+  \boldsymbol{\sigma} = \boldsymbol{C} : \boldsymbol{\epsilon},
+\end{align}</script>
+
+<p>where $C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk})$. In index from,
+<script type="math/tex">\begin{align}
+  \sigma_{ij} = 2\mu\epsilon_{ij} + \lambda \epsilon_{kk} \delta_{ij}.
+\end{align}</script></p>
+
+<h3 id="betti-reciprocal-theorem">Betti reciprocal theorem</h3>
+<p>Consider two different equilibrium states of a solid $\boldsymbol{u}^{(1)}$, $\boldsymbol{\epsilon}^{(1)}$, $\boldsymbol{\sigma}^{(1)}$ and $\boldsymbol{u}^{(2)}$, $\boldsymbol{\epsilon}^{(2)}$, $\boldsymbol{\sigma}^{(2)}$. The two states could be under different boundary conditions. We can show that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  & \int_{\Gamma} (\boldsymbol{n} \cdot \boldsymbol{\sigma}^{(1)}) \cdot \boldsymbol{u}^{(2)} \, dS + \int_{\Omega} \boldsymbol{b}^{(1)} \cdot \boldsymbol{u}^{(2)} \, dV \\
+  &= \int_{\Gamma} (\boldsymbol{n} \cdot \boldsymbol{\sigma}^{(2)}) \cdot \boldsymbol{u}^{(1)} \, dS + \int_{\Omega} \boldsymbol{b}^{(2)} \cdot \boldsymbol{u}^{(1)} \, dV \\
+  &= \int_{\Omega} \boldsymbol{\sigma}^{(1)}:\boldsymbol{\epsilon}^{(2)} \, dV \\
+  &= \int_{\Omega} \boldsymbol{\sigma}^{(2)}:\boldsymbol{\epsilon}^{(1)} \, dV.
+\end{align} %]]></script>
+
+<p>To prove it, first observe that $\boldsymbol{\sigma}^{(1)}:\boldsymbol{\epsilon}^{(2)}$ = $\boldsymbol{\epsilon}^{(2)}:\boldsymbol{C}:\boldsymbol{\epsilon}^{(1)}$ = $\boldsymbol{\epsilon}^{(1)}:\boldsymbol{C}:\boldsymbol{\epsilon}^{(2)}$ = $\boldsymbol{\sigma}^{(2)}:\boldsymbol{\epsilon}^{(1)}$.
+Then note that
+<script type="math/tex">% <![CDATA[
+\begin{align}
+  & \int_{\Gamma} (\boldsymbol{n} \cdot \boldsymbol{\sigma}^{(1)}) \cdot \boldsymbol{u}^{(2)} \, dS + \int_{\Omega} \boldsymbol{b}^{(1)} \cdot \boldsymbol{u}^{(2)} \, dV \\
+  &= \int_{\Omega} \nabla \cdot (\boldsymbol{\sigma}^{(1)} \cdot \boldsymbol{u}^{(2)}) \, dV + \int_{\Omega} \boldsymbol{b}^{(1)} \cdot \boldsymbol{u}^{(2)} \, dV \\
+  &= \int_{\Omega} (\nabla \cdot \boldsymbol{\sigma}^{(1)} + \boldsymbol{b}^{(1)}) \, dV + \int_{\Omega} \boldsymbol{\sigma}^{(1)} : \nabla\boldsymbol{u}^{(2)} \, dV \\
+  &= \int_{\Omega} \boldsymbol{\sigma}^{(1)} : \boldsymbol{\epsilon}^{(2)} \, dV.
+\end{align} %]]></script>
+Similarly, we have
+<script type="math/tex">% <![CDATA[
+\begin{align}
+  & \int_{\Gamma} (\boldsymbol{n} \cdot \boldsymbol{\sigma}^{(2)}) \cdot \boldsymbol{u}^{(1)} \, dS + \int_{\Omega} \boldsymbol{b}^{(2)} \cdot \boldsymbol{u}^{(1)} \, dV \\
+  &= \int_{\Omega} \boldsymbol{\sigma}^{(2)} : \boldsymbol{\epsilon}^{(1)} \, dV.
+\end{align} %]]></script>
+This completes the proof of the Betti reciprocal theorem.</p>
+
+<h3 id="linear-elasticity">Linear elasticity</h3>
+<p><a href="../../assets/files/LinearElasticHandout.pdf">Relations between elastic constants</a></p>
+
+<h3 id="curvilinear-coordinates">Curvilinear coordinates</h3>
+<p><a href="../../assets/files/CurvilinearHandout.pdf">Linear elastic equations in curvilinear coordinates</a></p>
+
+  </article>
+
+  
+
+</div>
+
+      </div>
+    </div>
+
+    <footer>
+
+  <div class="wrapper">
+    &copy; Copyright 2020 Weilin Deng.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+        Last updated: 2020-03-09.
+    
+  </div>
+
+</footer>
+
+
+    <!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Load Common JS -->
+<script src="http://localhost:4000/weilindeng.com/assets/js/common.js"></script>
+
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+<script src="http://localhost:4000/weilindeng.com/assets/js/katex.js"></script>
+
+
+
+
+<!-- Include custom icon fonts -->
+<link rel="stylesheet" href="http://localhost:4000/weilindeng.com/assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="http://localhost:4000/weilindeng.com/assets/css/academicons.min.css">
+
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-XXXXXXXXX', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+  </body>
+
+</html>
