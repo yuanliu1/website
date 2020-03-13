@@ -18,8 +18,8 @@ social: true
 ---
 
 I am currently working as a Postdoctoral Research Associate
-of Solid Mechanics Group
-in the [School of Engineering](https://www.brown.edu/academics/engineering){:target="_blank"}
+in Solid Mechanics Group
+of the [School of Engineering](https://www.brown.edu/academics/engineering){:target="_blank"}
 at Brown University.
 I received my Ph.D. in Solid Mechanics in August 2019, from Brown University.
 My Ph.D. advisor was [Haneesh Kesari](https://vivo.brown.edu/display/hkesari){:target="_blank"}.
