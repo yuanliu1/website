@@ -17,13 +17,15 @@ For a static, linear elastic boundary value problem, the governing equation read
 $$
 \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
 $$
-<!-- $$
+
+
+<!-- $$$
 \begin{align}
   \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
   \label{eq:equilbrium}
 \end{align} 
-$$ -->
-
+$$$
+ -->
 with the boundary conditions
 
 $$
