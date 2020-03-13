@@ -11,6 +11,7 @@ profile:
     <p>Barus & Holley 744,</p>
     <p>184 Hope St.,</p>
     <p>Providence, RI 02912</p>
+    <!-- <a class="page-link" href="weilindeng.github.io/{{ site.baseurl }}/assets/psd/CV_WeilinDeng.pdf">CV</a> -->
 
 news: true
 social: true
@@ -33,3 +34,4 @@ with Outstanding Graduate Award.
 My master study was on experimental investigation of deformation mechanism of carbon nanotube fiber.
 
 Outside the office, I like reading, badminton, photography, and hiking.
+
