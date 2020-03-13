@@ -37,11 +37,12 @@ img: /assets/img/RoughModel.jpg
 Dry adhesion plays an important role in many fields, including biology, engineering, and physics. Many insects, spiders, and reptiles, for example, possess fibrillar structures on their foot pads that, through adhesion, allow these animals to adeptly scale vertical surfaces. In microelectromechanical systems (MEMS) engineering, adhesion-induced device failure is a pervasive problem that limits its continued development. In MEMS devices, such as comb drive accelerometers, slender, micrometer-sized structures are aligned in parallel rows in close proximity to one another. During the device’s fabrication stage or later in its operation, these structures can unintentionally come into contact with each other or the substrate and remain permanently adhered, leading to device failure. Adhesion also plays a role in the physical properties that underlie friction and wear at the sub-micrometer scale. Contact between hard solids, such as metals and ceramics, primarily takes place at the surface’s asperities. Adhesion firmly welds the asperities, and thus the two solids. In order to move or slide the solids over one another, significant frictional force must be generated in order to break the asperities apart or rupture the asperities from their respective solids, contributing to wear.
 </p>
 
+
 <div align="center">
-  <img src="{{ site.baseurl }}/assets/img/Adhesion.jpg" width="650">
+  <img src="{{ site.baseurl }}/assets/img/Adhesion.jpg" width="550">
 </div>
-<div class="textc">
-  <p>Top: Adhesion dominates at small scales. Bottom: Left–An ant climbs on a plant stem, showcasing that adhesive forces overcomes the gravitational forces at small length scales. Center–A comb finger of a drive actuator is stuck to the substrate due to adhesion. Right–Wear debris accumulates on the surface of the gear of a microengine as a result of adhesion.</p>
+<div class="col three caption">
+  Top: Adhesion dominates at small scales. Bottom: Left–An ant climbs on a plant stem, showcasing that adhesive forces overcomes the gravitational forces at small length scales. Center–A comb finger of a drive actuator is stuck to the substrate due to adhesion. Right–Wear debris accumulates on the surface of the gear of a microengine as a result of adhesion.
 </div>
 
 ---  
@@ -54,9 +55,11 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <div align="center">
   <img src="{{ site.baseurl }}/assets/img/DDHExpt.jpg" width="600">
 </div>
-<div class="textc">
-  <p>Representative P–h curves (Right) measured in AFM contact experiments between a glass bead and a PDMS substrate that show DDH phenomenon (Left).</p>
+<div class="col three caption">
+  Representative P–h curves (Right) measured in AFM contact experiments between a glass bead and a PDMS substrate that show DDH phenomenon (Left).
 </div>
+&nbsp;
+
 
 <p class="justify">
   We carried out molecular statics simulations that capture DDH. We found that DDH is due to a series of surface mechanical instabilities. Surface features, such as depressions or protrusions, can temporarily arrest the growth or recession of the contact area. With a sufficiently large change of indentation depth, the contact area grows or recedes abruptly by a finite amount and dissipates energy.
@@ -65,9 +68,11 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/DDH_MolecularStaticSimulation.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Molecular statics simulation with the pitted-wedge tip.</p>
+<div class="col three caption">
+  Molecular statics simulation with the pitted-wedge tip.
 </div>
+&nbsp;
+
 
 <p class="justify">
   Furthermore, we presented a new mechanics model for explaining DDH that applies in the regime of large surface roughness based on the Maugis–Dugdale theory of adhesive elastic contacts and Nayak's theory of rough surfaces. The model is based on the occurrence of adhesion and roughness related small-scale instabilities as revealed by our molecular statics simulations. The model captures the trend of decreasing energy loss with increasing roughness. It also captures the experimentally observed dependencies of energy loss on the maximum indentation depth, and material and surface properties. <a href="https://appliedmechanicslab.github.io/News">Read news coverage.</a>
@@ -76,8 +81,8 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <div align="center">
   <img src="{{ site.baseurl }}/assets/img/RoughModel.jpg" width="600">
 </div>
-<div class="textc">
-  <p>The schematic of contact between a smooth rigid tip and a rough elastic substrate.</p>
+<div class="col three caption">
+  The schematic of contact between a smooth rigid tip and a rough elastic substrate.
 </div>
 
 ---
@@ -90,23 +95,26 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/FEM_A0.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Adhesive contact of a smooth surface.</p>
+<div class="col three caption">
+  Adhesive contact of a smooth surface.
 </div>
+&nbsp;
 
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/FEM_A0p9375.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Adhesive contact of a rough surface with small roughness.</p>
+<div class="col three caption">
+  Adhesive contact of a rough surface with small roughness.
 </div>
+&nbsp;
 
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/FEM_A2p5.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Adhesive contact of a rough surface with large roughness.</p>
+<div class="col three caption">
+  Adhesive contact of a rough surface with large roughness.
 </div>
+&nbsp;
 
 ---
 <h4> <a name="Gecko"></a>Topic C: The principle of contact splitting</h4>
@@ -118,9 +126,10 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <div align="center">
   <img src="{{ site.baseurl }}/assets/img/Gecko.jpg" width="500" align='center'>
 </div>
-<div class="textc">
-  <p>Hierarchical structure of the gecko adhesive system.</p>
+<div class="col three caption">
+  Hierarchical structure of the gecko adhesive system.
 </div>  
+&nbsp;
 
 <p class="justify">
   Analytical models based on adhesive elastic contact mechanics have been proposed to understand adhesion properties of fibrillar structures. Among those models, the critical mechanism is based on the principle of contact splitting—by which splitting contact into finer sub-contacts.
@@ -133,17 +142,14 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/Nele500Am1.5cpSig1.4768.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Adhesion of fibrillar structure with coupling interaction.</p>
+<div class="col three caption">
+  Adhesion of fibrillar structure with coupling interaction.
 </div>
+&nbsp;
 
 <video align='center' width="500" controls autoplay>
   <source src="{{ site.baseurl }}/assets/video/Nele500Am1.5uncpSig1.4768.mp4" type="video/mp4">
 </video>
-<div class="textc">
-  <p>Adhesion of fibrillar structure without coupling interaction.</p>
+<div class="col three caption">
+  Adhesion of fibrillar structure without coupling interaction.
 </div>
-
-<!-- ***
-[^footnote1]: S. Ma, et al: Effect of Contact Angle on Drainage and Imbibition in Regular Polygonal Tubes. Colloid Surf. A. 117. 1996. -->
-

@@ -42,9 +42,11 @@ img: /assets/img/Layers.jpg
   <img src="{{ site.baseurl }}/assets/img/HelicalBiomaterials.jpg" width="660" align='center'>
 </div>
 
-<div class="textc">
-  <p>Representative examples of structures displaying a helical symmetry: (a) the trunk of a Ponderosa pine, (b) the skeleton of a sea sponge, (c) the tusk of a narwhal, (d) the osteon of bone, (e) artery wall, (f) wood cell wall, and (g) multiwalled carbon nanotube.</p>
+<div class="col three caption">
+  Representative examples of structures displaying a helical symmetry: (a) the trunk of a Ponderosa pine, (b) the skeleton of a sea sponge, (c) the tusk of a narwhal, (d) the osteon of bone, (e) artery wall, (f) wood cell wall, and (g) multiwalled carbon nanotube.
 </div>
+&nbsp;
+
 
 <p class="justify">
   We performed a homogenization analysis to obtain effective bending stiffness of a cylindrical composite consisting of helically orthotropic layers with spatially periodic arrangement of elastic properties. One of the most important results of our work is that it is found that the effective bending stiffness of perfectly bonded multilayer composite consisting of heterogeneous materials could be higher than that of the structure made up with the corresponding homogeneous constituent material, breaking the rule of mixtures which is an important and common approach to estimate elastic properties of composite materials. The result sheds light on understanding the relationship between macroscale mechanical properties and microscale architectures in a large number of structural biomaterials which have cylindrical structures and display a helical symmetry.
@@ -52,4 +54,9 @@ img: /assets/img/Layers.jpg
 
 <div align="center">
   <img src="{{ site.baseurl }}/assets/img/Bending.jpg" width="700" align='center'>
+</div>
+
+<div class="col three caption">
+  Top: Left–The schematic of a multilayer cylindrical composite consisting of a total of N layers with helical orthotropy subjected pure bending moments. Right–The cross-section view of the composite. Bottom: The change of bending stiffness with total number of layers (solid line) and the effective bending stiffness for infinite layers (dashed line) of two materials with periodic arrangement under no-friction (Left) and no-slip (Right) interface condition, respectively.
+
 </div>

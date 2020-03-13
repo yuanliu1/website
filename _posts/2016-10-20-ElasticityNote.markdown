@@ -12,28 +12,30 @@ Some good introductions to tensors can be found in
 - Piaras Kelly, [Mechanics Lecture Notes Part III: Foundations of Continuum Mechanics](http://homepages.engineering.auckland.ac.nz/~pkel015/SolidMechanicsBooks/Part_III/index.html)
 
 ### Principle of virtual work
-For a static, linear elastic boundary value problem, the governing equation reads
-
+For a static, linear elastic boundary value problem, the governing equation reads 
+<!-- 
+$$ 
+\nabla 
 $$
-\nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
-$$
+ -->
+$$\nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega $$
 
+$$\begin{aligned} A & = B \\\ & = C \end{aligned}$$
 
-<!-- $$$
-\begin{align}
+<!-- $$
+\begin{aligned}
   \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
   \label{eq:equilbrium}
-\end{align} 
-$$$
- -->
+\end{aligned} 
+$$ -->
+
 with the boundary conditions
 
 $$
-\begin{align}
+\begin{alignedat}{3}
   \boldsymbol{u} &= \boldsymbol{u}^*, \quad \text{on} \quad \Gamma_u, \\
-  \boldsymbol{\sigma} \cdot \boldsymbol{n} &= \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. 
-  \label{eq:BC}
-\end{align}
+  \boldsymbol{\sigma} \cdot \boldsymbol{n} &= \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. \\
+\end{alignedat}
 $$
 
 Consider a virtual displacement filed $$\delta\boldsymbol{u}$$ which satisfies $$\delta\boldsymbol{u} = \boldsymbol{o}$$ on $$\Gamma_u$$. Multiply $$\delta\boldsymbol{u}$$ on both side of \eqref{eq:equilbrium} and integrate over $$\Omega$$, we obtain

@@ -104,25 +104,31 @@
 </ul>
 
 <h3 id="principle-of-virtual-work">Principle of virtual work</h3>
-<p>For a static, linear elastic boundary value problem, the governing equation reads</p>
+<p>For a static, linear elastic boundary value problem, the governing equation reads 
+<!-- 
+$$ 
+\nabla 
+$$
+ -->
+<script type="math/tex">\nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega</script></p>
 
-<script type="math/tex; mode=display">\nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned} A & = B \\\ & = C \end{aligned} %]]></script>
 
-<!-- $$$
-\begin{align}
+<!-- $$
+\begin{aligned}
   \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
   \label{eq:equilbrium}
-\end{align} 
-$$$
- -->
+\end{aligned} 
+$$ -->
+
 <p>with the boundary conditions</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\begin{alignedat}{3}
   \boldsymbol{u} &= \boldsymbol{u}^*, \quad \text{on} \quad \Gamma_u, \\
-  \boldsymbol{\sigma} \cdot \boldsymbol{n} &= \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. 
-  \label{eq:BC}
-\end{align} %]]></script>
+  \boldsymbol{\sigma} \cdot \boldsymbol{n} &= \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. \\
+\end{alignedat} %]]></script>
 
 <p>Consider a virtual displacement filed <script type="math/tex">\delta\boldsymbol{u}</script> which satisfies <script type="math/tex">\delta\boldsymbol{u} = \boldsymbol{o}</script> on <script type="math/tex">\Gamma_u</script>. Multiply <script type="math/tex">\delta\boldsymbol{u}</script> on both side of \eqref{eq:equilbrium} and integrate over <script type="math/tex">\Omega</script>, we obtain</p>
 
@@ -215,8 +221,7 @@ This completes the proof of the Betti reciprocal theorem.</p>
 
   <div class="wrapper">
     &copy; Copyright 2020 Weilin Deng.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-
+    
     
         Last updated: 2020-03-09.
     
@@ -252,7 +257,7 @@ This completes the proof of the Betti reciprocal theorem.</p>
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-XXXXXXXXX', 'auto');
+ga('create', 'UA-155423324-2', 'auto');
 ga('send', 'pageview');
 </script>
 
