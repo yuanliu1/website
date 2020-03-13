@@ -11,7 +11,7 @@ profile:
     <p>Barus & Holley 744,</p>
     <p>184 Hope St.,</p>
     <p>Providence, RI 02912</p>
-    <a class="page-link" href="/assets/pdf/CV_WeilinDeng.pdf">CV</a>
+    <a class="page-link" href="{{ site.baseurl }}//assets/pdf/CV_WeilinDeng.pdf">CV</a>
 
 news: true
 social: true
