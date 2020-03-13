@@ -15,7 +15,7 @@ comments: true
 <div class="col three caption">
     When spring has warmed the stream, ducks are the first to know
 </div>
-
+<br/>
 <div align="center">
   <img src="{{ site.baseurl }}/assets/gallery/flower_bud.jpg" width="700">
 </div>
