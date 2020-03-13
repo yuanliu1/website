@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Miscellaneous notes on linear elasticity
-date: 2016-10-20
+date: 2016-10-20 18:00
 description: research note
 ---
 
