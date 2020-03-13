@@ -22,16 +22,14 @@ img: /assets/img/RoughModel.jpg
 
 </style>
 
-<div class="navbar">
-    <div class="navbar-inner">
-      <h3>Topics:</h3>
-        <ul class="nav">
-            <li><a href="#DDH">Depth-dependent-hysteresis</a></li>
-            <li><a href="#FEM">Roughness-enhanced adhesion</a></li>
-            <li><a href="#Gecko">Contact splitting principle</a></li>
-        </ul>   
-    </div>
-</div>
+
+<h3>Topics:</h3>
+<ol>
+    <li type="A"><a href="#DDH">Depth-dependent-hysteresis</a></li>
+    <li type="A"><a href="#FEM">Roughness-enhanced adhesion</a></li>
+    <li type="A"><a href="#Gecko">Contact splitting principle</a></li>
+</ol>   
+
 
 <p class="justify">
 Dry adhesion plays an important role in many fields, including biology, engineering, and physics. Many insects, spiders, and reptiles, for example, possess fibrillar structures on their foot pads that, through adhesion, allow these animals to adeptly scale vertical surfaces. In microelectromechanical systems (MEMS) engineering, adhesion-induced device failure is a pervasive problem that limits its continued development. In MEMS devices, such as comb drive accelerometers, slender, micrometer-sized structures are aligned in parallel rows in close proximity to one another. During the device’s fabrication stage or later in its operation, these structures can unintentionally come into contact with each other or the substrate and remain permanently adhered, leading to device failure. Adhesion also plays a role in the physical properties that underlie friction and wear at the sub-micrometer scale. Contact between hard solids, such as metals and ceramics, primarily takes place at the surface’s asperities. Adhesion firmly welds the asperities, and thus the two solids. In order to move or slide the solids over one another, significant frictional force must be generated in order to break the asperities apart or rupture the asperities from their respective solids, contributing to wear.
