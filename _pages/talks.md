@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /talk/
-title: talks
+title: Talks
 description: Talks by categories in reversed chronological order.
 years: [2019, 2018, 2017, 2016]
 ---
