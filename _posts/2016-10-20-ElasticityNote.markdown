@@ -15,11 +15,14 @@ Some good introductions to tensors can be found in
 For a static, linear elastic boundary value problem, the governing equation reads
 
 $$
+\nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
+$$
+<!-- $$
 \begin{align}
   \nabla \cdot \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{o}, \quad \text{in} \quad \Omega
   \label{eq:equilbrium}
 \end{align} 
-$$
+$$ -->
 
 with the boundary conditions
 
@@ -116,7 +119,7 @@ This completes the proof of the Betti reciprocal theorem.
 
 
 ### Linear elasticity
-[Relations between elastic constants](../../assets/files/LinearElasticHandout.pdf)
+[Relations between elastic constants]({{ site.baseurl }}/assets/pdf/LinearElasticHandout.pdf)
 
 ### Curvilinear coordinates
-[Linear elastic equations in curvilinear coordinates](../../assets/files/CurvilinearHandout.pdf)
+[Linear elastic equations in curvilinear coordinates]({{ site.baseurl }}/assets/pdf/CurvilinearHandout.pdf)

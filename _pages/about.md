@@ -29,9 +29,8 @@ I am also interested in adhesion and instability of soft materials.
 
 
 Prior to Brown, I obtained my B.Eng. in Engineering Mechanics in July 2010
-and M.Eng. in Solid Mechanics in January 2013, both from Tianjin University, China,
-with Outstanding Graduate Award. 
-My master study was on experimental investigation of deformation mechanism of carbon nanotube fiber.
+and M.Eng. in Solid Mechanics in January 2013, both from Tianjin University, China, with Outstanding Graduate Award. 
+My master study was on experimental investigation of the multi-scale deformation mechanism of carbon nanotube fiber.
 
 Outside the office, I like reading, badminton, photography, and hiking.
 
