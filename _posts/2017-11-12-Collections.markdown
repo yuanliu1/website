@@ -3,14 +3,12 @@ layout: post
 title: Collections
 date: 2017-11-12 18:00
 description: books and lecture notes on solid mechanics
+comments: true
 ---
 
 #### Books
 - [Solid mechanics books](https://appliedmechanicslab.github.io/appliedmechanicslab/Books.html){:target="_blank"} -- From [Prof. Haneesh Kesari](https://appliedmechanicslab.github.io){:target="_blank"}
-
-
 - [History on Solid Mechanics]({{ site.baseurl }}/assets/pdf/Rice_Solid_Mechanics_1994_2010.pdf) by Professor [James R. Rice](http://esag.harvard.edu/rice/){:target="_blank"}
-
 - [Rough Surface Generation](http://www.mysimlabs.com/surface_generation.html){:target="_blank"} by David Bergström
 
 ---
