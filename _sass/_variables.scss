@@ -63,7 +63,7 @@ $lighter-gray:      #eee !default;
 
 $grey-color:        #828282;
 $grey-color-light:  lighten($grey-color, 40%);
-$grey-color-dark:   darken($grey-color, 25%);
+$grey-color-dark:   darken($grey-color, 20%);
 
 $darken-1:          rgba(#000,.0625) !default;
 $darken-2:          rgba(#000,.125) !default;
@@ -144,7 +144,7 @@ $nav-height: 56px;
 
 // Footer
 $footer-border-top: thin solid $grey-color-dark;
-$footer-padding: $space-1;
+$footer-padding: 0.rem;
 $footer-color: $light-gray;
 $footer-bg-color: $grey-color-dark;
 $footer-font-weight: 300;
@@ -157,7 +157,7 @@ $footer-font-size: .75rem;
 /* portfolio tinkering */
 $img_spacing: 5px;
 $img-height: 275px;
-$caption-font-size: 12px;
+$caption-font-size: 13px;
 $caption-color: #aaa;
 
 /* add on-palm to be consistent with other jekyll theme media queries */

@@ -11,7 +11,7 @@ description: > # this means to ignore newlines until "url:"
 
 url: # the base hostname & protocol for your site
 baseurl: #/weilindeng.com # the subpath of your site, e.g. /blog/
-last_updated: 2020-03-09 # leave blank if you don't want to display last updated
+last_updated: 2020-03-13 # leave blank if you don't want to display last updated
 
 # -----------------------------------------------------------------------------
 # Open Graph
@@ -60,7 +60,7 @@ text:
 disqus_shortname: weilindeng # put your disqus shortname
 
 # Optional features
-show_social_icons:  false
+show_social_icons:  true
 enable_anchorjs:    false
 enable_katex:       true
 
