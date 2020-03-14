@@ -49,7 +49,7 @@ comments: true
   <img src="{{ site.baseurl }}/assets/img/leaves.jpg" width="700">
 </div>
 <div class="col three caption">
-    Foliage after rain
+    Foliage after a rain in the late fall
 </div>
 
 ---

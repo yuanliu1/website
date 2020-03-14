@@ -122,7 +122,7 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 </p>
 
 <div align="center">
-  <img src="{{ site.baseurl }}/assets/img/Gecko.jpg" width="500" align='center'>
+  <img src="{{ site.baseurl }}/assets/img/Gecko.jpg" width="400" align='center'>
 </div>
 <div class="col three caption">
   Hierarchical structure of the gecko adhesive system.
@@ -138,7 +138,7 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 
 
 <video align='center' width="500" controls autoplay>
-  <source src="{{ site.baseurl }}/assets/video/Nele500Am1.5cpSig1.4768.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/video/Nele500Am1p5cpSig1p4768.mp4" type="video/mp4">
 </video>
 <div class="col three caption">
   Adhesion of fibrillar structure with coupling interaction.
@@ -146,8 +146,16 @@ Dry adhesion plays an important role in many fields, including biology, engineer
 &nbsp;
 
 <video align='center' width="500" controls autoplay>
-  <source src="{{ site.baseurl }}/assets/video/Nele500Am1.5uncpSig1.4768.mp4" type="video/mp4">
+  <source src="{{ site.baseurl }}/assets/video/Nele500Am1p5uncpSig1p4768.mp4" type="video/mp4">
 </video>
 <div class="col three caption">
   Adhesion of fibrillar structure without coupling interaction.
+</div>
+&nbsp;
+
+
+<img src="{{ site.baseurl }}/assets/img/SpringModelCurve.jpg" style="width: 50%;"/>
+<img src="{{ site.baseurl }}/assets/img/SpringModelRatio.jpg" style="width: 49%;"/>
+<div class="caption">
+  Left: Contact force–displacement curves for different coupling stiffnesses. Right: The variation of contact ratio during loading and unloading phases for different coupling stiffnesses. 
 </div>
