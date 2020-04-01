@@ -16,6 +16,25 @@
 
   <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
   <link rel="canonical" href="http://localhost:4000/blog/2019/MachineLearning/">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 </head>
 
 
@@ -102,7 +121,11 @@
   </header>
 
   <article class="post-content">
-    
+    <script type="math/tex; mode=display">\def\bs#1{\boldsymbol #1}
+\def\hbs#1{\hat{\boldsymbol {#1}}}
+\def\ul#1{\underline{\underline{#1}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}</script>
+
 
   </article>
 

@@ -16,6 +16,25 @@
 
   <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
   <link rel="canonical" href="http://localhost:4000/blog/2016/FEMNote/">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 </head>
 
 
@@ -102,10 +121,15 @@
   </header>
 
   <article class="post-content">
-    <!-- #### The matrix notations of Elasticity
-Let the stress--strain ($$\boldsymbol{\sigma}$$--$$\boldsymbol{\epsilon}$$) relation $$\{\sigma\} = [D]\{\epsilon\}$$ be denoted as
+    <script type="math/tex; mode=display">\def\bs#1{\boldsymbol #1}
+\def\hbs#1{\hat{\boldsymbol {#1}}}
+\def\ul#1{\underline{\underline{#1}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}</script>
 
-$$
+<h4 id="the-matrix-notations-of-elasticity">The matrix notations of Elasticity</h4>
+<p>Let the stress–strain ($\bs{\sigma}$–$\bs{\epsilon}$) relation ${\sigma} = [D]{\epsilon}$ be denoted as
+<script type="math/tex">% <![CDATA[
+\begin{align}
   \begin{Bmatrix}
   \sigma_{11} \\
   \sigma_{22} \\
@@ -131,12 +155,12 @@ $$
   \gamma_{23} \\
   \gamma_{31}
   \end{Bmatrix},
-$$
+  \label{eq:stress_strain}
+\end{align} %]]></script></p>
 
-where
+<p>where</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   \begin{Bmatrix}
     \epsilon_{11} \\
     \epsilon_{22} \\
@@ -155,12 +179,11 @@ $$
     \pd{w}{x}+\pd{u}{z}
   \end{Bmatrix}.
   \label{eq:strain}
-\end{equation}
-$$
+\end{equation}</script>
 
-For the plain strain problem, \eqref{eq:stress_strain} is reduced to
+<p>For the plain strain problem, \eqref{eq:stress_strain} is reduced to</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   \begin{Bmatrix}
   \sigma_{11} \\
@@ -179,32 +202,27 @@ $$
   \gamma_{12}
   \end{Bmatrix}.
   \label{eq:plain_strain}
-\end{equation}
-$$
+\end{equation} %]]></script>
 
-For the plain stress problem, we only need to replace $E$ with $E/(1-\nu^2)$ and $\nu$ with $\nu/(1-\nu)$ in \eqref{eq:plain_strain}.
+<p>For the plain stress problem, we only need to replace $E$ with $E/(1-\nu^2)$ and $\nu$ with $\nu/(1-\nu)$ in \eqref{eq:plain_strain}.</p>
 
-In the case of axis-symmetric problem, we adopt the cylindrical coordinate and let $z$ be the symmetric axis. The non-zero components of stress are
+<p>In the case of axis-symmetric problem, we adopt the cylindrical coordinate and let $z$ be the symmetric axis. The non-zero components of stress are</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   {\sigma} = [\sigma_{rr}, \sigma_{\theta\theta}, \sigma_{zz}, \sigma_{rz}]^T
   \label{eq:axisym_sigma}
-\end{equation}
-$$
+\end{equation}</script>
 
-and the non-zero components of strain are
-$$
-\begin{align}
+<p>and the non-zero components of strain are
+<script type="math/tex">\begin{align}
   {\epsilon} = [\epsilon_{rr}, \epsilon_{\theta\theta}, \epsilon_{zz}, \gamma_{rz}]^{T}
   = [\pd{u}{r}, \frac{u}{r}, \pd{w}{z}, \pd{u}{z}+\pd{w}{r}]^T.
   \label{eq:axisym_epsilon}
-\end{align}
-$$
+\end{align}</script></p>
 
-The elastic matrix $[D]$ is
+<p>The elastic matrix $[D]$ is</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   [D] = \frac{E(1-\nu)}{(1+\nu)(1-2\nu)}
   \begin{bmatrix}
@@ -214,43 +232,37 @@ $$
     0 & 0 & 0 & \frac{1-2\nu}{1-\nu}
   \end{bmatrix}.
   \label{eq:axis_sysmmetric}
-\end{equation}
-$$
+\end{equation} %]]></script>
 
+<h4 id="element-stiffness-matrix-and-force-vector-2d">Element stiffness matrix and force vector (2D)</h4>
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Plain strain problem </li>
+</ol>
+<p>Let $n$ be the number of node in an element. We adopt the isoparametric element, that is, the coordinate transformation and the displacement interpolation use the same shape functions. More precisely, the coordination transformation that transforms a global element to a standard, parent element through the isoparametric mapping is</p>
 
-####  Element stiffness matrix and force vector (2D)
-##### Plain strain problem
-Let the $n$ be the number of node in an element. We adopt the isoparametric element--that is, the coordinate transformation and the displacement interpolation use the same shape functions. More pricisely, the coordination transformation that transforms a global element to a standard, parent element through the isoparametric mapping is
-
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   x = \sum_{i=1}^{n}N_i(\xi,\eta) x_i, \quad y = \sum_{i=1}^{n}N_i(\xi,\eta) y_i,
   \label{eq:xy2xieta}
-\end{equation}
-$$
+\end{equation}</script>
 
-where $(x_i,y_i)$ are the global coordiniate of the $i_{th}$ node, $N_i$ is the shape function. The displacements are interpolated as
+<p>where $(x_i,y_i)$ are the global coordinate of the $i_{th}$ node, $N_i$ is the shape function. The displacements are interpolated as</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   u(x,y) = \sum_{i=1}^{n}N_i(x,y) u_i, \quad v(x,y) = \sum_{i=1}^{n}N_i(x,y) v_i.
   \label{eq:uv_interpolate}
-\end{equation}
-$$
+\end{equation}</script>
 
-where $(u_i,v_i)$ are the displacement of the $i_{th}$ node.
+<p>where $(u_i,v_i)$ are the displacement of the $i_{th}$ node.</p>
 
-Now suppose $n = 4$ and consider the plain strain case. By substituting the interpolated displacements \eqref{eq:uv_interpolate} into \eqref{eq:strain} for the 2D case we obtain
+<p>Now suppose $n = 4$ and consider the plain strain case. By substituting the interpolated displacements \eqref{eq:uv_interpolate} into \eqref{eq:strain} for the 2D case we obtain</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   \epsilon = [B] \delta^e = [B_1, B_2, B_3, B_4] \delta^e,
-\end{equation}
-$$
+\end{equation}</script>
 
-where
+<p>where</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   [B_i] =
   \begin{bmatrix}
@@ -258,42 +270,35 @@ $$
   0 & N_{i,y} \\
   N_{i,y} & N_{i,x}
   \end{bmatrix},
-\end{equation}
-$$
+\end{equation} %]]></script>
 
-$\delta^e = [\delta_1^T, \delta_2^T, \delta_3^T, \delta_4^T]$, and $\delta_i = [u_i, v_i]^T$. Thus from \eqref{eq:plain_strain} we have
+<p>$\delta^e = [\delta_1^T, \delta_2^T, \delta_3^T, \delta_4^T]$, and $\delta_i = [u_i, v_i]^T$. Thus from \eqref{eq:plain_strain} we have</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   \sigma = [D][B]\delta^e.
-\end{equation}
-$$
+\end{equation}</script>
 
-The element stiffness matrix is
+<p>The element stiffness matrix is</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   [k] = \iint [B]^T [D] [B] \, dxdy =  \int_{-1}^1\int_{-1}^1 [B]^T [D] [B] j \, d\xi d\eta,
   \label{eq:elem_stiff}
-\end{equation}
-$$
+\end{equation}</script>
 
-where $j$ is the Jacoiban determinant of
+<p>where $j$ is the Jacobian determinant of</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   [J] =
   \begin{bmatrix}
   x_{,\xi} & y_{,\xi} \\
   x_{,\eta} & y_{,\eta}
   \end{bmatrix}.
-\end{equation}
-$$
+\end{equation} %]]></script>
 
-Note that
+<p>Note that</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   \begin{Bmatrix}
     N_{i,x} \\
     N_{i,y}
@@ -304,56 +309,51 @@ $$
     N_{i,\xi} \\
     N_{i,\eta}
   \end{Bmatrix}.
-\end{equation}
-$$
+\end{equation}</script>
 
-We compute the element stiffness matrix \eqref{eq:elem_stiff} numerically using the Gauss–Legendre quadrature rule, i.e.,
+<p>We compute the element stiffness matrix \eqref{eq:elem_stiff} numerically using the Gauss–Legendre quadrature rule, i.e.,</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   [k] = \sum_{i=1}^{p} w_i [B]^T|_{(\xi_i,\eta_i)} [D] [B]|_{(\xi_i,\eta_i)} j|_{(\xi_i,\eta_i)},
   \label{eq:elem_stiff_numerical}
-\end{equation}
-$$
+\end{equation}</script>
 
-where $(\xi_i,\eta_i)$ and $w_i$ are the quadrature point and weight, respectively.
+<p>where $(\xi_i,\eta_i)$ and $w_i$ are the quadrature point and weight, respectively.</p>
 
-The force vector due to the body force is
+<p>The force vector due to the body force is</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   [f] = \iint [N]^T [b] \, dxdy = \int_{-1}^1 \int_{-1}^1 [N]^T [b] j \, d\xi d\eta,
   \label{eq:elem_force}
-\end{equation}
-$$
+\end{equation}</script>
 
-where $[N] = [N^1, N^2, N^3, N^4]$ and
+<p>where $[N] = [N^1, N^2, N^3, N^4]$ and</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   [N^i] =
   \begin{bmatrix}
   N_i & 0 \\
   0 & N_i
   \end{bmatrix}, \quad [b] = [b_x, b_y]^T.
-\end{equation}
-$$
+\end{equation} %]]></script>
 
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Axis-symmetric problem </li>
+</ol>
+<p>For the axis-symmetric problem, the coordinate transformation and displacement interpolation are</p>
 
-
-##### Axis-symmetric problem
-For the axis-symmetric problem, the coordinate transformation and displacement interpolation are
-
-$$
-\begin{align}
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
   r &= \sum_{i=1}^{n}N_i(\xi,\eta) r_i, \quad z = \sum_{i=1}^{n}N_i(\xi,\eta) z_i, \\
   u(r,z) &= \sum_{i=1}^{n}N_i(r,z) u_i, \quad w(r,z) = \sum_{i=1}^{n}N_i(r,z) w_i.
-\end{align}
-$$
+\end{aligned}
+\end{equation} %]]></script>
 
-From \eqref{eq:axisym_epsilon} we have
+<p>From \eqref{eq:axisym_epsilon} we have</p>
 
-$$
+<script type="math/tex; mode=display">% <![CDATA[
 \begin{equation}
   [B_i] =
   \begin{bmatrix}
@@ -362,69 +362,103 @@ $$
   0 & N_{i,z} \\
   N_{i,z} & N_{i,r}
   \end{bmatrix}
-\end{equation}
-$$
+\end{equation} %]]></script>
 
-and $\delta_i = [u_i, w_i]^T$. The element stiffness matrix becomes
+<p>and $\delta_i = [u_i, w_i]^T$. The element stiffness matrix becomes</p>
 
-$$
-\begin{align}
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
   [k] &= 2\pi \iint [B]^T [D] [B] r\, drdz =  2\pi \int_{-1}^1\int_{-1}^1 [B]^T [D] [B] r j \, d\xi d\eta, \\
   &= 2\pi \sum_{i=1}^{p} w_i [B]^T|_{(\xi_i,\eta_i)} [D] [B]|_{(\xi_i,\eta_i)} r|_{(\xi_i,\eta_i)} j|_{(\xi_i,\eta_i)}.
   \label{eq:axisym_elem_stiff_numerical}
-\end{align}
-$$
+\end{aligned}
+\end{equation} %]]></script>
 
-The force vector due to the body force becomes
+<p>The force vector due to the body force becomes</p>
 
-$$
-\begin{equation}
+<script type="math/tex; mode=display">\begin{equation}
   [f] = 2\pi \iint [N]^T [b] r \, drdz = 2\pi \int_{-1}^1 \int_{-1}^1 [N]^T [b] r j \, d\xi d\eta.
   \label{eq:axisym_elem_force}
-\end{equation}
-$$
- -->
+\end{equation}</script>
 
-<h4 id="numerical-integration">Numerical integration</h4>
-<p>A good introduction to numerical introduction can be found in Sec. 5.5, p.455 of the book <em>Finite Element Procedures (second edition)</em> by Klaus-Jurgen Bathe. A polynomial up to the order <script type="math/tex">2N-1</script> is integrated exactly when using a <script type="math/tex">N</script>-node Gauss quadrature. If a lower-order Gauss quadrature is used to compute the stiffness matrix, it can lead the stiffness matrix to be singular. In that case, a spurious zero energy mode or hourglass mode may exist. That is to say, there exists some particular displacement mode that has zero strain at the Gauss quadrature points. See more detailed discussion of spurious zero energy mode on p.239 of the book <em>The Finite Element Method: Linear Static and Dynamic Finite Element Analysis</em> by T. J. R. Hughes or <a href="/assets/pdf/NumericalIntegrationHourglassMode.pdf">here</a>.</p>
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Numerical integration </li>
+</ol>
+
+<p>A good introduction to numerical introduction can be found in Sec. 5.5, p.455 of the book <em>Finite Element Procedures (second edition)</em> by Klaus-Jurgen Bathe. A polynomial up to the order $2N-1$ is integrated exactly when using a $N$-node Gauss quadrature. If a lower-order Gauss quadrature is used to compute the stiffness matrix, it can lead the stiffness matrix to be singular. In that case, a spurious zero energy mode or hourglass mode may exist. That is to say, there exists some particular displacement mode that has zero strain at the Gauss quadrature points. See more detailed discussion of spurious zero energy mode on p.239 of the book <em>The Finite Element Method: Linear Static and Dynamic Finite Element Analysis</em> by T. J. R. Hughes or <a href="/assets/pdf/NumericalIntegrationHourglassMode.pdf">here</a>.</p>
 
 <h4 id="nonlinear-body-force-field">Nonlinear body force field</h4>
-<p>Consider a linear elastic, boundary value problem with the nonlinear body force <script type="math/tex">\boldsymbol{b}</script> dependent on the displacement <script type="math/tex">\boldsymbol{u}</script>. the governing equation reads</p>
-
-<script type="math/tex; mode=display">\nabla \cdot \boldsymbol{\sigma}(\boldsymbol{u}) + \boldsymbol{b}(\boldsymbol{u}) = \boldsymbol{o}, \quad \text{in} \quad \Omega</script>
+<p>Consider a linear elastic, boundary value problem with the nonlinear body force $\bs{b}$ dependent on the displacement $\bs{u}$. the governing equation reads
+<script type="math/tex">\begin{align}
+  \nabla \cdot \bs{\sigma}(\bs{u}) + \bs{b}(\bs{u}) = \bs{o}, \quad \text{in} \quad \Omega
+  \label{eq:equilbrium}
+\end{align}</script></p>
 
 <p>with the boundary conditions</p>
 
-<script type="math/tex; mode=display">\boldsymbol{u} = \boldsymbol{u}^*, \quad \text{on} \quad \Gamma_u,</script>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+  \bs{u} &= \bs{u}^*, \quad \text{on} \quad \Gamma_u, \\
+  \bs{\sigma} \cdot \bs{n} &= \bs{t}^*, \quad \text{on} \quad \Gamma_s. 
+  \label{eq:BC}
+\end{aligned}
+\end{equation} %]]></script>
 
-<script type="math/tex; mode=display">\boldsymbol{\sigma} \cdot \boldsymbol{n} = \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s.</script>
+<p>From the <a href="/blog/2016/ElasticityNote/">Principle of virtual work</a>, we have</p>
 
-<p>From the Principle of Virtual Work, we have</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+  \int_{\Omega} \bs{\sigma}(\bs{u}):\delta\bs{\epsilon} \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}) \cdot \delta\bs{u}\, dV.
+\end{aligned}
+  \label{eq:virtualwork}
+\end{equation} %]]></script>
 
-<script type="math/tex; mode=display">\int_{\Omega} \boldsymbol{\sigma}(\boldsymbol{u}):\delta\boldsymbol{\epsilon} \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.</script>
+<p>where $\delta\bs{u}$ is a virtual displacement filed (test solution) which satisfies $\delta\bs{u} = \bs{o}$ on $\Gamma_u$, and $\delta\bs{\epsilon} = \text{sym}(\nabla\delta\bs{u})$. 
+Since $\bs{\sigma} = \bs{C}:\nabla\bs{u}$, the \eqref{eq:virtualwork} becomes</p>
 
-<p>where <script type="math/tex">\delta\boldsymbol{u}</script> is a virtual displacement filed (test solution) which satisfies <script type="math/tex">\delta\boldsymbol{u} = \boldsymbol{o}</script> on <script type="math/tex">\Gamma_u</script>, and <script type="math/tex">\delta\boldsymbol{\epsilon} = \text{sym}(\nabla\delta\boldsymbol{u})</script>. 
-Since <script type="math/tex">\boldsymbol{\sigma} = \boldsymbol{C}:\nabla\boldsymbol{u}</script>, the above equation becomes</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \int_{\Omega} \nabla \delta\bs{u}:\bs{C}:\nabla\bs{u} \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}) \cdot \delta\bs{u}\, dV.
+  \label{eq:virtualwork1}
+\end{align} %]]></script>
 
-<script type="math/tex; mode=display">\int_{\Omega} \nabla \delta\boldsymbol{u}:\boldsymbol{C}:\nabla\boldsymbol{u} \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.</script>
+<p>We use the Newton-Raphson method to solve the nonlinear problem \eqref{eq:virtualwork1}. Suppose the displacement $\bs{u} + d\bs{u}$ satisfies \eqref{eq:virtualwork1}, then we have</p>
 
-<p>We use the Newton-Raphson method to solve the nonlinear problem. Suppose the displacement <script type="math/tex">\boldsymbol{u} + d\boldsymbol{u}</script> satisfies equilibrium, then we have</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \int_{\Omega} \nabla \delta\bs{u}:\bs{C}:(\nabla\bs{u}+\nabla d\bs{u}) \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}+d\bs{u}) \cdot \delta\bs{u}\, dV.
+  \label{eq:virtualwork2}
+\end{align} %]]></script>
 
-<script type="math/tex; mode=display">\int_{\Omega} \nabla \delta\boldsymbol{u}:\boldsymbol{C}:(\nabla\boldsymbol{u}+\nabla d\boldsymbol{u}) \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}+d\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.</script>
+<p>To the first order approximation, in the index form, the \eqref{eq:virtualwork2} can be rewritten as</p>
 
-<p>To the first order approximation, in the index form, the above equation can be rewritten as</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \int_{\Omega} C_{ijkl} \delta u_{i,j} (u_{k,l} + du_{k,l}) \, dV &= \int_{\Gamma_s} t^*_i \delta u_i \, dS + \int_{\Omega} \delta u_i b_{i}(u_j) \, dV + \int_{\Omega} \delta u_i \pd{b_i}{u_j} du_j \, dV.
+  \label{eq:virtualwork3}
+\end{align} %]]></script>
 
-<script type="math/tex; mode=display">\int_{\Omega} C_{ijkl} \delta u_{i,j} (u_{k,l} + du_{k,l}) \, dV = \int_{\Gamma_s} t_{i}^* \delta u_i \, dS + \int_{\Omega} \delta u_i b_{i}(u_j) \, dV + \int_{\Omega} \delta u_i  \frac{\partial b_i}{\partial u_j} du_j \, dV.</script>
+<p>Note that $C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk})$.
+According to the Galerkin method in FEM, we choose</p>
 
-<p>Note that <script type="math/tex">C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk})</script>.
-Accoording to the Galerkin method in FEM, we choose</p>
+<script type="math/tex; mode=display">\begin{equation}
+  \delta u_i = \sum_{a=1}^{n} N^{(a)} \delta u_i^{(a)}, \quad u_j = \sum_{b=1}^{n} N^{(b)} u_j^{(b)},
+\end{equation}</script>
 
-<script type="math/tex; mode=display">\delta u_i = \sum_{a=1}^{n} N^{(a)} \delta u_i^{(a)}, \quad u_j = \sum_{b=1}^{n} N^{(b)} u_j^{(b)},</script>
+<p>and substitute $\delta u_i$ and $u_j$ into \eqref{eq:virtualwork3} to obtain</p>
 
-<p>and substitute <script type="math/tex">\delta u_i</script> and <script type="math/tex">u_j</script> into the equation to obtain</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+  \int_{\Omega} C_{ijkl} \delta u^{(a)}_{i} (u^{(b)}_{k} + du^{(b)}_{k}) N^{(a)}_{,j} N^{(b)}_{,l} \, dV =& \int_{\Gamma_s} t^*_i \delta u^{(a)}_i N^{(a)} \, dS + \int_{\Omega} \delta u^{(a)}_i N^{(a)} b_{i}(N^{(b)} u_j^{(b)}) \, dV \\
+  &+ \int_{\Omega} \delta u^{(a)}_i \pd{b_i}{u_j} du^{(b)}_j N^{(a)} N^{(b)} \, dV.
+\end{aligned} 
+  \label{eq:virtualwork4}
+\end{equation} %]]></script>
 
-<p><script type="math/tex">\int_{\Omega} C_{ijkl} \delta u_{i}^{(a)} (u^{(b)}_{k} + du^{(b)}_{k}) N^{(a)}_{,j} N^{(b)}_{,l} \, dV</script>
-<script type="math/tex">= \int_{\Gamma_s} t^*_i \delta u^{(a)}_i N^{(a)} \, dS + \int_{\Omega} \delta u^{(a)}_i N^{(a)} b_{i}(N^{(b)} u_j^{(b)}) \, dV + \int_{\Omega} \delta u^{(a)}_i \frac{\partial b_i}{\partial u_j} du^{(b)}_j N^{(a)} N^{(b)} \, dV.</script></p>
 
   </article>
 

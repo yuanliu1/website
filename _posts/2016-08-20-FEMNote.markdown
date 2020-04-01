@@ -4,12 +4,18 @@ title: Miscellaneous notes on FEM
 date: 2016-08-20 11:12
 description: research note
 ---
-
-
-<!-- #### The matrix notations of Elasticity
-Let the stress--strain ($$\boldsymbol{\sigma}$$--$$\boldsymbol{\epsilon}$$) relation $$\{\sigma\} = [D]\{\epsilon\}$$ be denoted as
-
 $$
+\def\bs#1{\boldsymbol #1}
+\def\hbs#1{\hat{\boldsymbol {#1}}}
+\def\ul#1{\underline{\underline{#1}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+$$
+
+
+#### The matrix notations of Elasticity
+Let the stress--strain ($\bs{\sigma}$--$\bs{\epsilon}$) relation $\{\sigma\} = [D]\{\epsilon\}$ be denoted as
+$$
+\begin{align}
   \begin{Bmatrix}
   \sigma_{11} \\
   \sigma_{22} \\
@@ -35,6 +41,8 @@ $$
   \gamma_{23} \\
   \gamma_{31}
   \end{Bmatrix},
+  \label{eq:stress_strain}
+\end{align}
 $$
 
 where
@@ -123,8 +131,10 @@ $$
 
 
 ####  Element stiffness matrix and force vector (2D)
-##### Plain strain problem
-Let the $n$ be the number of node in an element. We adopt the isoparametric element--that is, the coordinate transformation and the displacement interpolation use the same shape functions. More pricisely, the coordination transformation that transforms a global element to a standard, parent element through the isoparametric mapping is
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Plain strain problem </li>
+</ol>
+Let $n$ be the number of node in an element. We adopt the isoparametric element, that is, the coordinate transformation and the displacement interpolation use the same shape functions. More precisely, the coordination transformation that transforms a global element to a standard, parent element through the isoparametric mapping is
 
 $$
 \begin{equation}
@@ -133,7 +143,7 @@ $$
 \end{equation}
 $$
 
-where $(x_i,y_i)$ are the global coordiniate of the $i_{th}$ node, $N_i$ is the shape function. The displacements are interpolated as
+where $(x_i,y_i)$ are the global coordinate of the $i_{th}$ node, $N_i$ is the shape function. The displacements are interpolated as
 
 $$
 \begin{equation}
@@ -182,7 +192,7 @@ $$
 \end{equation}
 $$
 
-where $j$ is the Jacoiban determinant of
+where $j$ is the Jacobian determinant of
 
 $$
 \begin{equation}
@@ -244,15 +254,18 @@ $$
 $$
 
 
-
-##### Axis-symmetric problem
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Axis-symmetric problem </li>
+</ol>
 For the axis-symmetric problem, the coordinate transformation and displacement interpolation are
 
 $$
-\begin{align}
+\begin{equation}
+\begin{aligned}
   r &= \sum_{i=1}^{n}N_i(\xi,\eta) r_i, \quad z = \sum_{i=1}^{n}N_i(\xi,\eta) z_i, \\
   u(r,z) &= \sum_{i=1}^{n}N_i(r,z) u_i, \quad w(r,z) = \sum_{i=1}^{n}N_i(r,z) w_i.
-\end{align}
+\end{aligned}
+\end{equation}
 $$
 
 From \eqref{eq:axisym_epsilon} we have
@@ -272,11 +285,13 @@ $$
 and $\delta_i = [u_i, w_i]^T$. The element stiffness matrix becomes
 
 $$
-\begin{align}
+\begin{equation}
+\begin{aligned}
   [k] &= 2\pi \iint [B]^T [D] [B] r\, drdz =  2\pi \int_{-1}^1\int_{-1}^1 [B]^T [D] [B] r j \, d\xi d\eta, \\
   &= 2\pi \sum_{i=1}^{p} w_i [B]^T|_{(\xi_i,\eta_i)} [D] [B]|_{(\xi_i,\eta_i)} r|_{(\xi_i,\eta_i)} j|_{(\xi_i,\eta_i)}.
   \label{eq:axisym_elem_stiff_numerical}
-\end{align}
+\end{aligned}
+\end{equation}
 $$
 
 The force vector due to the body force becomes
@@ -287,67 +302,93 @@ $$
   \label{eq:axisym_elem_force}
 \end{equation}
 $$
- -->
 
-#### Numerical integration
-A good introduction to numerical introduction can be found in Sec. 5.5, p.455 of the book *Finite Element Procedures (second edition)* by Klaus-Jurgen Bathe. A polynomial up to the order $$2N-1$$ is integrated exactly when using a $$N$$-node Gauss quadrature. If a lower-order Gauss quadrature is used to compute the stiffness matrix, it can lead the stiffness matrix to be singular. In that case, a spurious zero energy mode or hourglass mode may exist. That is to say, there exists some particular displacement mode that has zero strain at the Gauss quadrature points. See more detailed discussion of spurious zero energy mode on p.239 of the book *The Finite Element Method: Linear Static and Dynamic Finite Element Analysis* by T. J. R. Hughes or [here]({{ site.baseurl }}/assets/pdf/NumericalIntegrationHourglassMode.pdf).
+<ol>
+  <li type="circle" style="font-size: 18px; font-family: Lucida Grande; font-weight:bold; color:purple"> Numerical integration </li>
+</ol>
+
+A good introduction to numerical introduction can be found in Sec. 5.5, p.455 of the book *Finite Element Procedures (second edition)* by Klaus-Jurgen Bathe. A polynomial up to the order $2N-1$ is integrated exactly when using a $N$-node Gauss quadrature. If a lower-order Gauss quadrature is used to compute the stiffness matrix, it can lead the stiffness matrix to be singular. In that case, a spurious zero energy mode or hourglass mode may exist. That is to say, there exists some particular displacement mode that has zero strain at the Gauss quadrature points. See more detailed discussion of spurious zero energy mode on p.239 of the book *The Finite Element Method: Linear Static and Dynamic Finite Element Analysis* by T. J. R. Hughes or [here]({{ site.baseurl }}/assets/pdf/NumericalIntegrationHourglassMode.pdf).
  
 #### Nonlinear body force field
-Consider a linear elastic, boundary value problem with the nonlinear body force $$\boldsymbol{b}$$ dependent on the displacement $$\boldsymbol{u}$$. the governing equation reads
-
+Consider a linear elastic, boundary value problem with the nonlinear body force $\bs{b}$ dependent on the displacement $\bs{u}$. the governing equation reads
 $$
-  \nabla \cdot \boldsymbol{\sigma}(\boldsymbol{u}) + \boldsymbol{b}(\boldsymbol{u}) = \boldsymbol{o}, \quad \text{in} \quad \Omega
+\begin{align}
+  \nabla \cdot \bs{\sigma}(\bs{u}) + \bs{b}(\bs{u}) = \bs{o}, \quad \text{in} \quad \Omega
+  \label{eq:equilbrium}
+\end{align} 
 $$
 
 with the boundary conditions
 
 $$
-  \boldsymbol{u} = \boldsymbol{u}^*, \quad \text{on} \quad \Gamma_u, 
+\begin{equation}
+\begin{aligned}
+  \bs{u} &= \bs{u}^*, \quad \text{on} \quad \Gamma_u, \\
+  \bs{\sigma} \cdot \bs{n} &= \bs{t}^*, \quad \text{on} \quad \Gamma_s. 
+  \label{eq:BC}
+\end{aligned}
+\end{equation}
 $$
 
-$$
-  \boldsymbol{\sigma} \cdot \boldsymbol{n} = \boldsymbol{t}^*, \quad \text{on} \quad \Gamma_s. 
-$$
-
-From the Principle of Virtual Work, we have
+From the [Principle of virtual work]({{ site.baseurl }}/blog/2016/ElasticityNote/), we have
 
 $$
-  \int_{\Omega} \boldsymbol{\sigma}(\boldsymbol{u}):\delta\boldsymbol{\epsilon} \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.
+\begin{equation}
+\begin{aligned}
+  \int_{\Omega} \bs{\sigma}(\bs{u}):\delta\bs{\epsilon} \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}) \cdot \delta\bs{u}\, dV.
+\end{aligned}
+  \label{eq:virtualwork}
+\end{equation} 
 $$
 
-where $$\delta\boldsymbol{u}$$ is a virtual displacement filed (test solution) which satisfies $$\delta\boldsymbol{u} = \boldsymbol{o}$$ on $$\Gamma_u$$, and $$\delta\boldsymbol{\epsilon} = \text{sym}(\nabla\delta\boldsymbol{u})$$. 
-Since $$\boldsymbol{\sigma} = \boldsymbol{C}:\nabla\boldsymbol{u}$$, the above equation becomes
+where $\delta\bs{u}$ is a virtual displacement filed (test solution) which satisfies $\delta\bs{u} = \bs{o}$ on $\Gamma_u$, and $\delta\bs{\epsilon} = \text{sym}(\nabla\delta\bs{u})$. 
+Since $\bs{\sigma} = \bs{C}:\nabla\bs{u}$, the \eqref{eq:virtualwork} becomes
 
 $$
-  \int_{\Omega} \nabla \delta\boldsymbol{u}:\boldsymbol{C}:\nabla\boldsymbol{u} \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.
-$$
-
-
-We use the Newton-Raphson method to solve the nonlinear problem. Suppose the displacement $$\boldsymbol{u} + d\boldsymbol{u}$$ satisfies equilibrium, then we have 
-
-$$
-  \int_{\Omega} \nabla \delta\boldsymbol{u}:\boldsymbol{C}:(\nabla\boldsymbol{u}+\nabla d\boldsymbol{u}) \, dV = \int_{\Gamma_s} \boldsymbol{t}^* \cdot \delta\boldsymbol{u} \, dS + \int_{\Omega} \boldsymbol{b}(\boldsymbol{u}+d\boldsymbol{u}) \cdot \delta\boldsymbol{u}\, dV.
-$$
-
-To the first order approximation, in the index form, the above equation can be rewritten as
-
-$$
-  \int_{\Omega} C_{ijkl} \delta u_{i,j} (u_{k,l} + du_{k,l}) \, dV = \int_{\Gamma_s} t_{i}^* \delta u_i \, dS + \int_{\Omega} \delta u_i b_{i}(u_j) \, dV + \int_{\Omega} \delta u_i  \frac{\partial b_i}{\partial u_j} du_j \, dV.
+\begin{align}
+  \int_{\Omega} \nabla \delta\bs{u}:\bs{C}:\nabla\bs{u} \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}) \cdot \delta\bs{u}\, dV.
+  \label{eq:virtualwork1}
+\end{align} 
 $$
 
 
-Note that $$C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk})$$.
-Accoording to the Galerkin method in FEM, we choose
+We use the Newton-Raphson method to solve the nonlinear problem \eqref{eq:virtualwork1}. Suppose the displacement $\bs{u} + d\bs{u}$ satisfies \eqref{eq:virtualwork1}, then we have 
 
 $$
+\begin{align}
+  \int_{\Omega} \nabla \delta\bs{u}:\bs{C}:(\nabla\bs{u}+\nabla d\bs{u}) \, dV &= \int_{\Gamma_s} \bs{t}^* \cdot \delta\bs{u} \, dS + \int_{\Omega} \bs{b}(\bs{u}+d\bs{u}) \cdot \delta\bs{u}\, dV.
+  \label{eq:virtualwork2}
+\end{align} 
+$$
+
+To the first order approximation, in the index form, the \eqref{eq:virtualwork2} can be rewritten as
+
+$$
+\begin{align}
+  \int_{\Omega} C_{ijkl} \delta u_{i,j} (u_{k,l} + du_{k,l}) \, dV &= \int_{\Gamma_s} t^*_i \delta u_i \, dS + \int_{\Omega} \delta u_i b_{i}(u_j) \, dV + \int_{\Omega} \delta u_i \pd{b_i}{u_j} du_j \, dV.
+  \label{eq:virtualwork3}
+\end{align} 
+$$
+
+Note that $C_{ijkl} = \lambda \delta_{ij} \delta_{kl} + \mu (\delta_{ik} \delta_{jl} + \delta_{il} \delta_{jk})$.
+According to the Galerkin method in FEM, we choose
+
+$$
+\begin{equation}
   \delta u_i = \sum_{a=1}^{n} N^{(a)} \delta u_i^{(a)}, \quad u_j = \sum_{b=1}^{n} N^{(b)} u_j^{(b)},
+\end{equation}
 $$
 
-and substitute $$\delta u_i$$ and $$u_j$$ into the equation to obtain
+and substitute $\delta u_i$ and $u_j$ into \eqref{eq:virtualwork3} to obtain
 
 $$
-  \int_{\Omega} C_{ijkl} \delta u_{i}^{(a)} (u^{(b)}_{k} + du^{(b)}_{k}) N^{(a)}_{,j} N^{(b)}_{,l} \, dV 
+\begin{equation}
+\begin{aligned}
+  \int_{\Omega} C_{ijkl} \delta u^{(a)}_{i} (u^{(b)}_{k} + du^{(b)}_{k}) N^{(a)}_{,j} N^{(b)}_{,l} \, dV =& \int_{\Gamma_s} t^*_i \delta u^{(a)}_i N^{(a)} \, dS + \int_{\Omega} \delta u^{(a)}_i N^{(a)} b_{i}(N^{(b)} u_j^{(b)}) \, dV \\
+  &+ \int_{\Omega} \delta u^{(a)}_i \pd{b_i}{u_j} du^{(b)}_j N^{(a)} N^{(b)} \, dV.
+\end{aligned} 
+  \label{eq:virtualwork4}
+\end{equation}
 $$
-$$
-  = \int_{\Gamma_s} t^*_i \delta u^{(a)}_i N^{(a)} \, dS + \int_{\Omega} \delta u^{(a)}_i N^{(a)} b_{i}(N^{(b)} u_j^{(b)}) \, dV + \int_{\Omega} \delta u^{(a)}_i \frac{\partial b_i}{\partial u_j} du^{(b)}_j N^{(a)} N^{(b)} \, dV.
-$$
+
+
