@@ -12,4 +12,4 @@ $$
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
 $$
 
-
+See the note on <a href="https://hackmd.io/@wldeng/machine-learning-note" target="_blank">this page</a>.
