@@ -5,7 +5,7 @@
     {% if page.layout != "about" %}
     <span class="site-title">
         {% assign name = site.name | split: ' ' %}
-        <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/" style="font-size: 1.25rem;"><strong>{{ name | first }}</strong> {{ name | last }}</a>
+        <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/" style="font-size: 1.25rem;"><strong>{{ name | first }} {{ name | last }}</strong></a>
     </span>
     {% endif %}
 
@@ -26,7 +26,7 @@
         <a class="page-link" href="{{ site.baseurl | prepend: site.url }}/">About</a>
 
         <!-- Blog -->
-        <a class="page-link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
+<!--        <a class="page-link" href="{{ '/blog/' | prepend: site.baseurl | prepend: site.url }}">Blog</a> --!>
 
         <!-- Pages -->
         {% for page in site.pages %}
@@ -36,7 +36,7 @@
         {% endfor %}
 
         <!-- CV link -->
-        <a class="page-link" href="{{ '/assets/pdf/CV_WeilinDeng.pdf' | prepend: site.baseurl | prepend: site.url }}">vitae</a>
+        <a class="page-link" href="{{ '/assets/pdf/CV_YuanLiu.pdf' | prepend: site.baseurl | prepend: site.url }}">CV</a>
 
       </div>
     </nav>

@@ -1,36 +1,21 @@
 ---
 layout: about
 permalink: /
-title: <strong>Weilin</strong> Deng
-description: Postdoctoral Research Associate at Brown University
+title: <strong>Yuan Liu</strong>
+description: Postdoctoral Researcher at Massachusetts Institute of Technology
 
 profile:
   align: right
   image: prof_pic.jpg
-  address: >
-    <p>Barus & Holley 744,</p>
-    <p>184 Hope St.,</p>
-    <p>Providence, RI 02912</p>
-    
+  address: 
 
 news: true
 social: true
 ---
 
-I am currently working as a Postdoctoral Research Associate
-in Solid Mechanics Group
-of the [School of Engineering](https://www.brown.edu/academics/engineering){:target="_blank"}
-at Brown University.
-I received my Ph.D. in Solid Mechanics in August 2019, from Brown University.
-My Ph.D. advisor was [Dr. Haneesh Kesari](https://vivo.brown.edu/display/hkesari){:target="_blank"}.
-My research is focused on fundamental understanding of adhesive [contact mechanics](https://en.wikipedia.org/wiki/Contact_mechanics){:target="_blank"} at the micro- and nano-scales and its applications in [engineering](https://en.wikipedia.org/wiki/Atomic_force_microscopy){:target="_blank"} and [biological](https://en.wikipedia.org/wiki/Synthetic_setae){:target="_blank"} systems.
-It involves theoretical modeling and numerical analysis of adhesive elastic and viscoelastic contacts between solids with rough surfaces.
-I am also interested in adhesion and instability of soft materials.
+I am currently a postdoctoral researcher in the Research Laboratory of Electronics and the Department of Physics at MIT, hosted by [Prof. Isaac Chuang](https://web.mit.edu/~cua/www/quanta/). I will join NCSU as an assistant professor starting January 2024 in the [Department of Electrical & Computer Engineering](https://ece.ncsu.edu) and [Computer Science](https://www.csc.ncsu.edu). Email me if you are interested to join my group!
 
+I am interested in quantum-classical algorithms to solve challenging problems in quantum chemistry, chemical physics, and material science, including correlated electronic structure and real-time dynamics. I also study protocols to leverage continuous-variable quantum systems such as bosonic oscillators for computation, information processing, and sensing. Another topic is the study of quantum error correction at a system or algorithm level. These topics are investigated from theoretical and computational perspectives, with possible experimental collaborations.
 
-Prior to Brown, I obtained my B.Eng. in Engineering Mechanics in July 2010
-and M.Eng. in Solid Mechanics in January 2013, both from Tianjin University, China, with Outstanding Graduate Award. 
-My master study was focused on the experimental investigation of multi-scale deformation mechanism of carbon nanotube fiber.
-
-In my spare time I enjoy reading, photography, hiking, and playing badminton.
+I received my Ph.D. in chemical physics and M.S. in electrical engineering from Brown University, supervised by [Prof. Brenda Rubenstein](https://rubenstein.group) and [Prof. Lai-Sheng Wang](https://sites.brown.edu/lswang/). I majored in physics as an undergrad at Tsinghua University. In my spare time I enjoy running and hiking.
 

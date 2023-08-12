@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-name: Weilin Deng
-email: weilin_deng@brown.edu
+name: Yuan Liu
+email: yuanliu@mit.edu
 description: > # this means to ignore newlines until "url:"
   Personal website based on a simple, whitespace theme for academics.
 #  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "url:"
 
 url: # the base hostname & protocol for your site
 baseurl: #/weilindeng.com # the subpath of your site, e.g. /blog/
-last_updated: 2020-03-13 # leave blank if you don't want to display last updated
+last_updated:  # leave blank if you don't want to display last updated
 
 # -----------------------------------------------------------------------------
 # Open Graph
@@ -25,45 +25,44 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-github_username: WeilinDeng
+github_username: yuanliu1
 twitter_username: # your Twitter handle
-linkedin_username: weilin-deng
-scholar_userid: qfDjlzUAAAAJ&hl
-orcid_id: # 0000-0002-5834-0644
+linkedin_username: yuan-liu-bb406069
+scholar_userid: 5EGClVoAAAAJ
+orcid_id:
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
-research_gate_profile: Weilin_Deng2
+research_gate_profile: 
 blogger_url: # your blogger URL
 
-contact_note: >
-  Email me if you have any questions.
+contact_note: Email me if you have any questions.
 
-google_analytics: UA-155423324-2 # out your google-analytics code
+google_analytics:  # out your google-analytics code
 
-# -----------------------------------------------------------------------------
-# Blog
-# -----------------------------------------------------------------------------
-blog_name: Blog
-# blog_description: 
-
-# Pagination
-paginate: 4
-permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
-
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-
-# Comments
-disqus_shortname: weilindeng # put your disqus shortname
-
-# Optional features
-show_social_icons:  true
-enable_anchorjs:    false
-enable_katex:       true
+# # -----------------------------------------------------------------------------
+# # Blog
+# # -----------------------------------------------------------------------------
+# blog_name: Blog
+# # blog_description: 
+# 
+# # Pagination
+# paginate: 4
+# permalink: /blog/:year/:title/
+# paginate_path: /blog/page:num/
+# 
+# text:
+#   pagination:
+#     newer: 'Newer'
+#     older: 'Older'
+# 
+# # Comments
+# disqus_shortname: weilindeng # put your disqus shortname
+# 
+# # Optional features
+# show_social_icons:  true
+# enable_anchorjs:    false
+# enable_katex:       true
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -74,9 +73,9 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
+#  projects:
+#    output: true
+#    permalink: /projects/:path/
 
 news_limit: 11
 
@@ -103,9 +102,10 @@ plugins:
 # Jekyll-Scholar
 scholar:
 
-  last_name: Einstein
+  last_name: [Liu]
+  first_name: [Yuan]
 
-  style: apa
+  style: american-physics-society
   locale: en
 
   sort_by: year
@@ -115,6 +115,7 @@ scholar:
   bibliography: papers.bib
   bibliography_template: bib
 
+  pdf: true
   replace_strings: true
   join_strings: true
 
