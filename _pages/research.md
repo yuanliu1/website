@@ -2,7 +2,7 @@
 layout: page
 permalink: /research/
 title: Research
-description: under construction
+description: Coming soon!
 ---
 
 {% for project in site.research %}
